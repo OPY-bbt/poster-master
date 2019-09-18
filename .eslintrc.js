@@ -6,7 +6,8 @@ module.exports = {
   extends: ["google", "plugin:react/recommended", "prettier"],
   globals: {
     Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    SharedArrayBuffer: "readonly",
+    React: "readonly"
   },
   parserOptions: {
     ecmaFeatures: {

@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -9,10 +10,15 @@ module.exports = {
   },
   mode: "development",
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.resolve(__dirname, "dist"),
     compress: true,
     port: 9000,
     hot: true
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src")
+    }
   },
   module: {
     rules: [
@@ -27,7 +33,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.ejs"
+      template: path.resolve(__dirname, "src/index.ejs")
+    }),
+    new webpack.ProvidePlugin({
+      React: "react"
     })
   ]
 };

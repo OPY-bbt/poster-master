@@ -27,6 +27,7 @@
     "build": "webpack"
   },
   "dependencies": {
+    "core-js": "3",
     "react": "^16.9.0",
     "react-dom": "npm:@hot-loader/react-dom",
     "styled-components": "^4.3.2"
